@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'VT323', monospace;
+}
+
+.button {
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 20px;
+    font-size: 40px;
+    width: 200px;
+    user-select: none;
+    background-color: black;
+    color: white;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}

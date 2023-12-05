@@ -1,0 +1,57 @@
+.center-div {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.match-p {
+  margin: 10px 200px 0px 200px;
+  font-size: 30px;
+}
+
+.match-p-bottom {
+  margin: 10px 200px 50px 200px;
+  font-size: 30px;
+}
+
+.penalty-shot {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 200px;
+  margin: 5px;
+}
+
+.pen-text {
+  font-family: "VT323", monospace;
+}
+
+.pen-btn {
+  margin-top: 50px;
+}
+
+.btn-margin {
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 920px) {
+  .match-p {
+    margin: 20px 50px 20px 50px;
+  }
+
+  .match-p-bottom {
+    margin: 20px 10px 20px 10px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .match-p {
+    margin: 20px 10px 20px 10px;
+  }
+
+  .match-p-bottom {
+    margin: 20px 10px 20px 10px;
+  }
+}
