@@ -1,10 +1,16 @@
 import React from "react";
 import "./start.css";
+import useSound from "use-sound";
+import celebrations from "../sounds/football_celebrations.mp3";
 
 export default function Celebrations(props) {
   function nextLevel(e) {
     props.nextLevel(e);
   }
+
+  const [play] = useSound(celebrations);
+
+  play();
 
   return (
     <div className="center-div">

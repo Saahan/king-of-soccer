@@ -1,10 +1,17 @@
 import React from "react";
 import "./scenarios.css";
+import goalCheer from "../../../sounds/goal_cheer.mp3";
+import useSound from "use-sound";
 
 export default function PassSuccess(props) {
   function nextEvent(e) {
     props.nextEvent(e);
   }
+
+  const [play] = useSound(goalCheer);
+
+  play();
+  
   return (
     <div className="center-div">
       <img src="/img/goalscored.png" alt="goal" width={400} height={300}></img>

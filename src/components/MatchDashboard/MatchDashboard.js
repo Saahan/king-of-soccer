@@ -1,10 +1,17 @@
 import React from "react";
 import "./match.css";
+import useSound from "use-sound";
+import footballCrowd from "../../sounds/football_crowd.mp3";
 
 export default function MatchDashboard(props) {
   function nextLevel(e, t) {
     props.nextLevel(e, t);
   }
+
+  const [play] = useSound(footballCrowd);
+
+  play();
+
   return (
     <div className="center-div">
       <div>

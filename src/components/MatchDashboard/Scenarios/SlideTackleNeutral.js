@@ -1,10 +1,16 @@
 import React from "react";
 import "./scenarios.css";
+import footballMiss from "../../../sounds/football_miss.mp3";
+import useSound from "use-sound";
 
 export default function SlideTackleNeutral(props) {
   function nextEvent(e) {
     props.nextEvent(e);
   }
+
+  const [play] = useSound(footballMiss);
+
+  play();
 
   return (
     <div className="center-div">

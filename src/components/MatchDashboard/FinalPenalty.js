@@ -1,10 +1,16 @@
 import React from "react";
 import "./match.css";
+import goalCheer from "../../sounds/goal_cheer.mp3";
+import useSound from "use-sound";
 
 export default function FinalPenalty(props) {
   function goToMain(e) {
     props.goToMain(e);
   }
+
+  const [play] = useSound(goalCheer);
+
+  play();
 
   return (
     <div className="center-div">

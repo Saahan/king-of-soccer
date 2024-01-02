@@ -1,10 +1,16 @@
 import React from "react";
 import "./scenarios.css";
+import goalCheer from "../../../sounds/goal_cheer.mp3";
+import useSound from "use-sound";
 
 export default function DoubleUpFailure(props) {
   function nextEvent(e) {
     props.nextEvent(e);
   }
+  
+  const [play] = useSound(goalCheer);
+
+  play();
 
   return (
     <div className="center-div">

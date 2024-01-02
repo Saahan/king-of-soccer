@@ -1,10 +1,16 @@
 import React from "react";
 import "./start.css";
+import useSound from "use-sound";
+import gameOver from "../sounds/game_over.mp3";
 
 export default function GameOver(props) {
   function nextLevel(e) {
     props.nextLevel(e);
   }
+
+  const [play] = useSound(gameOver);
+
+  play();
 
   return (
     <div className="center-div">

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./match.css";
+import useSound from "use-sound";
+import kick from "../../sounds/ball_kick.mp3";
 
 export default function PenaltiesEvent(props) {
   let initialState = [
@@ -16,6 +18,8 @@ export default function PenaltiesEvent(props) {
   const [penScoredOpp, setPenScoredOpp] = useState(0);
   const [disabled, setDisabled] = useState(false);
   const [buttonText, setButtonText] = useState("Shoot");
+
+  const [play] = useSound(kick);
 
   function goToMain(e) {
     props.goToMain(e);
@@ -37,6 +41,8 @@ export default function PenaltiesEvent(props) {
         nextEvent("FinalPenalty");
       }
     }
+
+    play();
 
     let scored = Math.floor(Math.random() * (2 - 1 + 1)) + 1;
 
