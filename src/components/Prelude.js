@@ -12,8 +12,7 @@ export default function Prelude(props) {
   img.onload = () => {
     setImgLoaded(true);
   };
-  img.src = "/img/Manager.png";
-  img.src = "/img/hamsun.png";
+  img.src = "/img/Manager.png" && "/img/hamsun.png";
 
   return (
     imgLoaded === true && (

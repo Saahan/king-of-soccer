@@ -35,9 +35,8 @@ export default function Event3(props) {
   img.onload = () => {
     setImgLoaded(true);
   };
-  img.src = "/img/fieldplay.png";
-  img.src = "/img/longshot.png";
-  img.src = "/img/opponentshot.png";
+  img.src =
+    "/img/fieldplay.png" && "/img/longshot.png" && "/img/opponentshot.png";
 
   switch (eventVariable) {
     case 1:

@@ -35,9 +35,8 @@ export default function Event4(props) {
   img.onload = () => {
     setImgLoaded(true);
   };
-  img.src = "/img/ballwithyou.png";
-  img.src = "/img/dribble.png";
-  img.src = "/img/opponentpass.png";
+  img.src =
+    "/img/ballwithyou.png" && "/img/dribble.png" && "/img/opponentpass.png";
 
   switch (eventVariable) {
     case 1:
