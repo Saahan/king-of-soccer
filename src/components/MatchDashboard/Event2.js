@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./match.css";
 
 export default function Event2(props) {
+  const [imgLoaded, setImgLoaded] = useState(false);
+
   let timeVariable = Math.floor(Math.random() * (35 - 26 + 1)) + 26;
   let eventVariable = Math.floor(Math.random() * 3) + 1;
 
@@ -29,151 +31,164 @@ export default function Event2(props) {
     }
   }
 
+  const img = new Image();
+  img.onload = () => {
+    setImgLoaded(true);
+  };
+  img.src = "/img/keeper.png";
+  img.src = "/img/kick.png";
+  img.src = "/img/defence.png";
+
   switch (eventVariable) {
     case 1:
       return (
-        <div className="center-div">
-          <p>
-            {timeVariable}' - The keeper is the last man in defence!
-          </p>
-          <div>
-            {" "}
-            <img src="/img/keeper.png" width={500} height={300} alt="kpr"></img>
+        imgLoaded === true && (
+          <div className="center-div">
+            <p>{timeVariable}' - The keeper is the last man in defence!</p>
+            <div>
+              {" "}
+              <img
+                src="/img/keeper.png"
+                width={500}
+                height={300}
+                alt="kpr"
+              ></img>
+            </div>
+            <div>
+              <div
+                className="button btn-margin"
+                onClick={() => {
+                  eventRandomizer(
+                    "KeeperRushSuccess",
+                    "KeeperRushFailure",
+                    "KeeperRushNeutral"
+                  );
+                }}
+              >
+                RUSH
+              </div>
+              <div
+                className="button btn-margin"
+                onClick={() => {
+                  eventRandomizer(
+                    "KeeperStaySuccess",
+                    "KeeperStayFailure",
+                    "KeeperStayNeutral"
+                  );
+                }}
+              >
+                STAY BACK
+              </div>
+              <div
+                className="button btn-margin"
+                onClick={() => {
+                  eventRandomizer(
+                    "KeeperPunchSuccess",
+                    "KeeperPunchFailure",
+                    "KeeperPunchNeutral"
+                  );
+                }}
+              >
+                PUNCH BALL
+              </div>
+            </div>
           </div>
-          <div>
-            <div
-              className="button btn-margin"
-              onClick={() => {
-                eventRandomizer(
-                  "KeeperRushSuccess",
-                  "KeeperRushFailure",
-                  "KeeperRushNeutral"
-                );
-              }}
-            >
-              RUSH
-            </div>
-            <div
-              className="button btn-margin"
-              onClick={() => {
-                eventRandomizer(
-                  "KeeperStaySuccess",
-                  "KeeperStayFailure",
-                  "KeeperStayNeutral"
-                );
-              }}
-            >
-              STAY BACK
-            </div>
-            <div
-              className="button btn-margin"
-              onClick={() => {
-                eventRandomizer(
-                  "KeeperPunchSuccess",
-                  "KeeperPunchFailure",
-                  "KeeperPunchNeutral"
-                );
-              }}
-            >
-              PUNCH BALL
-            </div>
-          </div>
-        </div>
+        )
       );
 
     case 2:
       return (
-        <div className="center-div">
-          <p>
-            {timeVariable}' - JONES has a chance to score!
-          </p>
-          <div>
-            {" "}
-            <img src="/img/kick.png" width={500} height={300} alt="kc"></img>
+        imgLoaded === true && (
+          <div className="center-div">
+            <p>{timeVariable}' - JONES has a chance to score!</p>
+            <div>
+              {" "}
+              <img src="/img/kick.png" width={500} height={300} alt="kc"></img>
+            </div>
+            <div>
+              <div
+                className="button btn-margin"
+                onClick={() => {
+                  eventRandomizer("ShotSuccess", "ShotFailure", "ShotNeutral");
+                }}
+              >
+                SHOOT
+              </div>
+              <div
+                className="button btn-margin"
+                onClick={() => {
+                  eventRandomizer("PassSuccess", "PassFailure", "PassNeutral");
+                }}
+              >
+                PASS
+              </div>
+              <div
+                className="button btn-margin"
+                onClick={() => {
+                  eventRandomizer(
+                    "DribbleSuccess",
+                    "DribbleFailure",
+                    "DribbleNeutral"
+                  );
+                }}
+              >
+                DRIBBLE
+              </div>
+            </div>
           </div>
-          <div>
-            <div
-              className="button btn-margin"
-              onClick={() => {
-                eventRandomizer("ShotSuccess", "ShotFailure", "ShotNeutral");
-              }}
-            >
-              SHOOT
-            </div>
-            <div
-              className="button btn-margin"
-              onClick={() => {
-                eventRandomizer("PassSuccess", "PassFailure", "PassNeutral");
-              }}
-            >
-              PASS
-            </div>
-            <div
-              className="button btn-margin"
-              onClick={() => {
-                eventRandomizer(
-                  "DribbleSuccess",
-                  "DribbleFailure",
-                  "DribbleNeutral"
-                );
-              }}
-            >
-              DRIBBLE
-            </div>
-          </div>
-        </div>
+        )
       );
 
     case 3:
       return (
-        <div className="center-div">
-          <p>
-          {timeVariable}' - Your defence is facing a pacy striker!
-          </p>
-          <div>
-            {" "}
-            <img
-              src="/img/defence.png"
-              width={500}
-              height={300}
-              alt="def"
-            ></img>
+        imgLoaded === true && (
+          <div className="center-div">
+            <p>{timeVariable}' - Your defence is facing a pacy striker!</p>
+            <div>
+              {" "}
+              <img
+                src="/img/defence.png"
+                width={500}
+                height={300}
+                alt="def"
+              ></img>
+            </div>
+            <div>
+              <div
+                className="button btn-margin"
+                onClick={() => {
+                  eventRandomizer(
+                    "SlideTackleSuccess",
+                    "SlideTackleFailure",
+                    "SlideTackleNeutral"
+                  );
+                }}
+              >
+                SLIDE TACKLE
+              </div>
+              <div
+                className="button btn-margin"
+                onClick={() => {
+                  eventRandomizer(
+                    "DoubleUpSuccess",
+                    "DoubleUpFailure",
+                    "DoubleUpNeutral"
+                  );
+                }}
+              >
+                DOUBLE UP
+              </div>
+              <div
+                className="button btn-margin"
+                onClick={() => {
+                  eventRandomizer("FoulSuccess", "FoulFailure", "FoulNeutral");
+                }}
+              >
+                FOUL HIM
+              </div>
+            </div>
           </div>
-          <div>
-            <div
-              className="button btn-margin"
-              onClick={() => {
-                eventRandomizer(
-                  "SlideTackleSuccess",
-                  "SlideTackleFailure",
-                  "SlideTackleNeutral"
-                );
-              }}
-            >
-              SLIDE TACKLE
-            </div>
-            <div
-              className="button btn-margin"
-              onClick={() => {
-                eventRandomizer(
-                  "DoubleUpSuccess",
-                  "DoubleUpFailure",
-                  "DoubleUpNeutral"
-                );
-              }}
-            >
-              DOUBLE UP
-            </div>
-            <div
-              className="button btn-margin"
-              onClick={() => {
-                eventRandomizer("FoulSuccess", "FoulFailure", "FoulNeutral");
-              }}
-            >
-              FOUL HIM
-            </div>
-          </div>
-        </div>
+        )
       );
 
     default:
